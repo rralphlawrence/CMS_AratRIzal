@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+  }
+  body{
+    font-family: montserrat;
+    scroll-behavior: smooth;
+  }
+  nav{
+    background: #49beb7;
+    height: 80px;
+    width: 100%;
+    border: none;
+  }
+  label.logo{
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+  }
+  nav ul{
+    float: right;
+    margin-right: 20px;
+  }
+  nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+  }
+  nav ul li a{
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+  a.active,a:hover{
+    background: #47aca5;
+    transition: .5s;
+  }
+  .checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+  #check{
+    display: none;
+  }
+  @media (max-width: 952px){
+    label.logo{
+      font-size: 30px;
+      padding-left: 50px;
+    }
+    nav ul li a{
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 858px){
+    .checkbtn{
+      display: block;
+    }
+    ul{
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #4aaaa4;
+      top: 80px;
+      left: -100%;
+      text-align: center;
+      transition: all .5s;
+    }
+    nav ul li{
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+    }
+    nav ul li a{
+      font-size: 20px;
+    }
+    a:hover,a.active{
+      background: none;
+      color: #f0eeee;
+    }
+    #check:checked ~ ul{
+      left: 0;
+    }
+  }
+  @keyframes rights {
+      0%{
+            transform: translateX(100%);
+            opacity: 0;
+      }
+      100%{
+            opacity: 1;
+            transform: translateX(0%);
+      }
+  }
+  @keyframes texts {
+      0%{
+          opacity: 0;
+          transform: scale(0);
+      
+      }
+      50%{
+          opacity: 0.5;
+      }
+      100%{
+          opacity: 1;
+          transform: scale(1);
+      }
+  }
+
+  @keyframes Backg {
+      0%{
+        transform: translateY(-100%);
+       opacity: 0;
+      
+      }
+      100%{
+        transform: translateY(0%);
+          opacity: 1;
+        
+      }
+  }
+  @keyframes taas {
+    0%{
+      transform: translateY(100%);
+     opacity: 0;
+    
+    }
+    100%{
+      transform: translateY(0%);
+        opacity: 1;
+      
+    }
+}
+  
+  section{
+      background-image:linear-gradient(200deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.3) 100%, rgba(255,255,255,1) 100%), url(/images/pulag-sea-clouds.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      width: 100vw;
+      height: 60vh;
+      max-width: 100%;
+      margin:0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-image 0.3s all ease-in;
+      animation-name: Backg;
+      animation-duration: 2s ;
+
+    
+      .content{
+         width: 600px;
+          height: auto;
+          margin-top: -2rem;
+          border-left: 2px solid silver ;
+          padding-left: 1rem;
+         
+      }
+      h4{
+          font-size:3rem;
+            color: #ffffff;
+            animation-name:texts ;
+            animation-duration: 4s;
+            &:hover{
+                font-size: 2rem;
+                letter-spacing: 10px;
+                transition: 0.6s all ease-in-out;
+            }
+      }
+    
+      b{
+          color: rgb(255, 255, 255);
+          text-transform: uppercase;
+          font-weight: 800;
+          font-family: 'Montserrat';
+          letter-spacing: 7px;
+          font-size: 3.6rem;
+      }
+  }
+  .section{
+      text-align: center;
+      margin-top:  1.4rem;
+      font-size: 2rem;
+      font-family: 'Poppins';
+      color: #4aaaa4;
+    
+      h2{
+          animation-name: rights;
+          animation-duration: 3s;
+      }
+      .gallery{
+          display: flex;
+          margin: 1rem;
+          animation-name: taas;
+          animation-duration: 3s;
+          flex-wrap: wrap;
+
+
+          p{    
+              flex: 1;
+              color: grey;
+              font-size: 1rem;
+              margin: 1rem;
+              text-align: left;
+          }
+          img{
+              border-radius: 20px;
+              object-fit: contain;
+              width: 600px;
+              height: auto;
+              flex: 1;
+              max-width: 100%;
+
+
+          }
+      }
+    }
+
+    .grid-body{
+       
+        font-family: "Poppins", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        box-sizing: border-box;
+        font-size: 62.5%;
+        margin: 2rem;
+    }
+    .grid {
+        display: grid;
+        width: 100vw;
+        grid-gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
+        align-items: start;
+      }
+      
+      .grid-item {
+        background-color: #fff;
+        border-radius: 0.4rem;
+        overflow: hidden;
+        box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: 0.2s;
+      }
+      
+      .grid-item:hover {
+        transform: translateY(-0.5%);
+        box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.5);
+      }
+      
+      .card-img {
+        display: block;
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+      
+      .card-content {
+        padding: 3rem;
+      }
+      
+      .card-header {
+        font-size: 2rem;
+        font-weight: 500;
+        color: #0d0d0d;
+        margin-bottom: 1.5rem;
+      }
+      
+      .card-text {
+        font-size: 1rem;
+        letter-spacing: 0.1rem;
+        line-height: 1.7;
+        color: #3d3d3d;
+        margin-bottom: 2.5rem;
+      }
+      
+      .card-btn {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        font-size: 1rem;
+        text-align: center;
+        color: #3363ff;
+        background-color: #d8e0fd;
+        border: none;
+        border-radius: 0.4rem;
+        transition: 0.2s;
+        cursor: pointer;
+        letter-spacing: 0.1rem;
+      }
+      
+      .card-btn span {
+        margin-left: 1rem;
+        transition: 0.2s;
+      }
+      
+      .card-btn:hover,
+      .card-btn:active {
+        background-color: #c2cffc;
+      }
+      
+      .card-btn:hover span,
+      .card-btn:active span {
+        margin-left: 1.5rem;
+      }
+      
+      @media only screen and (max-width: 60em) {
+        .grid {
+          grid-gap: 3rem;
+         display: flex;
+         flex-wrap: wrap-reverse;
+        }
+      }
+      
+      footer{
+       
+        background: #4aaaa4;
+        height: auto;
+        width: 100%;
+        font-family: "Open Sans";
+        padding-top: 40px;
+        color: #fff;
+        max-width: 100%;
+    }
+    .footer-content{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-content h3{
+        font-family: 'Poppins';
+        font-size: 1.8rem;
+        font-weight: 400;
+        text-transform: capitalize;
+        line-height: 3rem;
+        letter-spacing: 10px;
+    }
+    .footer-content p{
+        max-width: 100%;
+        margin: 10px auto;
+        line-height: 28px;
+        font-size: 14px;
+        font-family:'Montserrat';
+    }
+    .socials{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem 0 3rem 0;
+    }
+    .socials li{
+        margin: 0 10px;
+    }
+    .socials a{
+        text-decoration: none;
+        color: #fff;
+    }
+    .socials a i{
+        font-size: 1.1rem;
+        transition: color .4s ease;
+    
+    }
+    .socials a:hover i{
+        color: aqua;
+    }
+    
+    .footer-bottom{
+        background: #3c8883;
+       width: 100%;
+       max-width: 100%;
+        padding: 20px 0;
+        text-align: center;
+    }
+    .footer-bottom p{
+        font-family: 'montserrat';
+        font-size: 14px;
+        word-spacing: 2px;
+        text-transform: capitalize;
+    }
+    .footer-bottom span{
+        text-transform: uppercase;
+        opacity: .4;
+        font-weight: 200;
+    }
